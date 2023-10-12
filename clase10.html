@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 10 --- JavaScript</title>
+    <style></style>
+</head>
+<body>
+    <!-- EJERCICIO # 1 -->
+    <button id="encontrarme">Encontrarme</button>
+    <p id="status">
+
+    </p>
+    <p id="map">
+
+    </p>
+    <p>
+        <a></a>
+    </p>
+
+    <script>
+        /* EJERCICIO # 1 */
+        var boton = document.getElementById('encontrarme')
+        boton.addEventListener('click', encontrarmeGeo)
+        function encontrarmeGeo(){
+           let status = document.querySelector('#status') 
+           if(!navigator.geolocation){
+            status.innerHTML = 'La geolocalización no está disponible en tu  navegador'
+           }else{
+            status.innerHTML = 'Localizando...'
+            setTimeout(() => {
+                navigator.geolocation.getCurrentPosition(success, error)
+            }, 2000)
+           }
+        }
+        function success(position){
+            console.log(position)
+            let latitud = position.coords.latitude
+            let longitud = position.coords.longitude
+            let a = document.querySelector('a')
+            a.href = `https://www.openstreetmap.org/#map=17/${latitud}/${longitud}`
+            a.innerText = 'ver el Mapa'
+            a.target = '_blank'
+            let map = document.querySelector('#map')
+            map.innerHTML = `Latitud: ${latitud}, Longitud: ${longitud}`
+
+        }
+        function error(){
+            status.innerHTML = 'Error, no pudimos obtener la información'
+        }
+    </script>
+</body>
+</html>

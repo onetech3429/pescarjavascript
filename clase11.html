@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 11 --- JavaScript Avanzado</title>
+    <style></style>
+</head>
+
+<body>
+
+    <script>
+        class Casa{
+            constructor(){
+            this.habitacion = 0
+            this.banio = 0
+            this.cocina = 0
+            this.living = 0
+            this.patio = 0
+            this.cochera = 0
+            }
+            setHabitacion(valor){
+                this.habitacion = valor
+            } 
+            setBanio(valor){
+                this.banio = valor
+            }
+            setCocina(valor){
+                this.cocina = valor
+            }
+            setLiving(valor){
+                this.living = valor
+            }
+            setPatio(valor){
+                this.patio = valor
+            }
+            setCochera(valor){
+                this.cochera = valor
+            }
+            informar(){
+                return {
+                    habitacion: this.habitacion,
+                    banio: this.banio,
+                    cocina: this.cocina,
+                    living: this.living,
+                    patio: this.patio,
+                    cochera: this.cochera
+                }
+            }
+        }
+
+        const casita1 = new Casa()
+        casita1.setHabitacion(2)
+        casita1.setBanio(1)
+        casita1.setCocina(1)
+        casita1.setLiving(2)
+        casita1.setPatio(2)
+        casita1.setCochera(1)
+        console.log(casita1.informar())
+
+        const casita2 = new Casa()
+        casita2.setLiving(1)
+        casita2.setBanio(1)
+        console.log(casita2.informar())
+
+
+
+        /* EJERCICIO # 2 (FUNCIONES CLOSURE) */
+        /* function iniciar(){
+            var nombre = 'Aruba'
+            function mostrarNombre(){
+                console.log(nombre)
+            }
+            mostrarNombre()
+        }
+        iniciar()*/
+        
+        
+        /* function saludar(usuario){
+            var texto = 'Hola esto es un saludo'
+            var decir = ()=> {
+                console.log(texto)
+            }
+            return decir()
+        }
+        saludar('Juan')
+        saludar('pedro') */
+
+
+
+
+        /* var agregar = function(){
+            var c= 1
+            return function(){
+                return c += 2
+                console.log(c)
+            }
+        }() */
+        //IIFE
+        /* function agregar() {
+            var c = 1
+            function plus() {
+                c += 2
+            }
+            plus()
+            return c
+        }
+
+        console.log(agregar())
+        console.log(agregar())
+        console.log(agregar()) */
+
+        /* EJERCICIO # 1 (prototype */
+        /*  function Vehiculo(ruedas, motor, asientos, color, marca){
+             this.ruedas = ruedas
+             this.motor = motor
+             this.asientos = asientos
+             this.color = color
+             this.marca = marca
+         }
+         Vehiculo.prototype.mostrar = function(){
+             return `Ruedas: ${this.ruedas}, Motor: ${this.motor}, Asientos: ${this.asientos}, Color: ${this.color}, Marca: ${this.marca}`
+         }
+         Vehiculo.prototype.puertas = 4
+         Vehiculo.prototype.getRuedas = function(){
+             return this.ruedas
+         }
+ 
+         function Taxi(ruedas, motor, asientos, color, marca, estado, licencia){
+             Vehiculo.call(this, ruedas, motor, asientos, color, marca)
+             this.estado = estado
+             this.licencia = licencia
+         }
+ 
+         //Taxi.prototype = Object.create(Vehiculo.prototype)
+         Taxi.prototype = new Vehiculo()
+         Taxi.prototype.getEstado = function(){
+             return this.estado
+         }
+ 
+         function Colectivo(ruedas, motor, asientos, color, marca, linea){
+             Vehiculo.call(this, ruedas, motor, asientos, color, marca)
+             this.linea = linea            
+         }
+         Colectivo.prototype = new Vehiculo()
+ 
+         function Moto(ruedas, motor, asientos, color, marca, cilindrada){
+             Vehiculo.call(this, ruedas, motor, asientos, color, marca)
+             this.cilindrada = cilindrada            
+         }
+         Moto.prototype = new Vehiculo()
+ 
+         let v1 = new Vehiculo(4, 1.3, 4, 'azul', 'ford')
+         let t1 = new Taxi(4, 1.6, 5, 'negro', 'fiat', 'ocupado', 'profesional')
+         let c1 = new Colectivo(8, 3.5, 40, 'verde', 'Mercedes', 140)
+         let m1 = new Moto(2, 250, 2, 'rojo', 'Yamaha', 250) */
+
+    </script>
+</body>
+
+</html>

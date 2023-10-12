@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 2 --- JavaScript Avanzado</title>
+    <style>
+        /* #caja1{
+            width: 80%;
+            height: 40px;
+            border: 1px solid black;
+        }
+        #caja2{
+            background-color: red;
+            width: 0px;
+            height: 40px;
+        } */
+
+        #padre{
+            width: 80%;
+            height: 400px;
+            background-color: salmon;
+        }
+        #hijo{
+            width: 50%;
+            height: 250px;
+            background-color: seagreen;
+        }
+        #nieto{
+            width: 30%;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- EJERCICIO # UNO-->
+    <!-- <h1>Clase 2</h1>
+    <p id="p1"></p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident doloribus numquam, ullam nihil voluptatum
+        veritatis modi quam est rerum iure, natus voluptatem corrupti sapiente? Tempora hic ipsa ad libero dolor.</p>
+     <ul>
+    </ul> 
+    <table id="tabla1" border="1"></table> -->
+
+    <!-- EJERCICIO # DOS (parte HTML)-->
+    
+    <!--
+    <div id="caja1">
+        <div id="caja2"></div>
+    </div>
+    <button onclick="activar()">Activar</button>
+    <button onclick="mostrarMas()">Más información</button>
+    <button id="mostrar">Más Información</button>
+    <div id="mas"></div> -->
+
+    <!-- EJERCICIO # TRES -->
+    <h1>Clase # 2</h1>
+    <div id="padre">
+        <div id="hijo">
+            <div id="nieto"></div>
+        </div>
+    </div>
+
+    <script>
+        //EJERCICIO # UNO
+        /* let p = document.getElementById('p1');
+        let a = document.createElement('a');
+        //a.innerText = 'visitar al sitio Web de  ...';
+        a = document.createTextNode('enlace');
+        p.appendChild(a);
+        a.href = "https://www.google.com/"
+        a.target = "blank" */
+
+        /* let ul = document.querySelector('ul');
+        let items = ['uno', 'dos', 'tres', 'cuatro']
+        items.forEach(element => {
+            let li = document.createElement('li');
+            li.innerText = element;
+            ul.appendChild(li)            
+        })        */      
+        //FUNCIÓN  
+        /* function saludar(){
+            console.log('Hola');
+        }
+        saludar() */
+        //FUNCIÓN ANÓNIMA
+        /* let saludar = function(){
+            console.log('Hola')
+        }
+
+        saludar() */
+        //FUNCIÓN FLECHA
+        /* let saludar = nombre => {
+            console.log('Hola ' +nombre)
+        }    
+
+        saludar('juan') */
+
+        /* let tab = document.querySelector('#tabla1');
+        let tr = document.createElement('tr');
+        let num = ['uno', 'dos', 'tres', 'cuatro'];
+        num.forEach(element => {
+            let td = document.createElement('td')
+            td.innerText = element
+            tr.appendChild(td)
+         })
+         tab.appendChild(tr) */ 
+
+         //TEMPORIZADORES
+         /* setInterval(function(){
+            console.log('Hola')
+        }, 3000) */
+        /* setTimeout(function(){
+            console.log('hola')
+        }, 5000) */
+        /* setInterval(() => {
+            console.log('Hola')
+        }, 3000); */
+
+        //EJERCICIO # DOS
+        
+        //HANDLER --> ACCIÓN
+        //LISTENER --> OYENTE
+       /*  function activar(){
+            var barra = document.getElementById('caja2')
+            var width =0;
+            setInterval(rellenar, 500)
+            function rellenar(){
+                if(width != 100){
+                    width++
+                    barra.style.width = width + '%'
+                }
+            }
+        }
+       let btn = document.querySelector('#mostrar');
+       btn.addEventListener('click', () => {      
+            let div = document.getElementById('mas');
+            let p = document.createElement('p');
+            p.innerText = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident doloribus numquam, ullam nihil voluptatum        veritatis modi quam est rerum iure, natus voluptatem corrupti sapiente? Tempora hic ipsa ad libero dolor Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident doloribus numquam, ullam nihil voluptatum        veritatis modi quam est rerum iure, natus voluptatem corrupti sapiente? Tempora hic ipsa ad libero dolor'
+            div.appendChild(p)
+        })  */
+
+        /* let btn = document.querySelector('mostrar');
+        btn.addEventListener('click', function(){}) */
+
+        //bubbling : false --> toca al tag más específico
+        //capturing : true --> toca al tag menos especifico
+        /* let padre = document.getElementById('padre');
+        let hijo = document.getElementById('hijo');
+        let nieto = document.getElementById('nieto');
+
+        nieto.addEventListener('click', function(e){
+            e.stopPropagation()            
+            console.log('soy el nieto')            
+        },false)
+        padre.addEventListener('click', function(e){
+            e.stopPropagation()                        
+            console.log('Soy el padre')
+        },false)
+        hijo.addEventListener('click', function(e){
+            e.stopPropagation()            
+            console.log('Soy el hijo')
+        },false) */
+
+        /* window.addEventListener('resize', function(){
+          console.log(window.outerWidth);
+          if(window.outerWidth > 600){
+            document.body.style.backgroundColor = "red"
+          }else {
+            document.body.style.backgroundColor = "green"
+          }  
+        }) */
+        
+        
+
+    </script>
+</body>
+
+</html>

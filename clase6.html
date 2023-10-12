@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .oculto{
+            display: none;
+        }
+        .activo{
+            display: inline-block;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- EJEMPLO # 1 -->
+    <!-- <header>
+        <nav>
+            <a href="plantilla.html" id="plantilla">Servicios</a>
+            <a href="enlace.html" id="enlace">La empresa</a>
+            <a href="otro.htm" id="otro">Otras Páginas</a>
+        </nav>
+    </header>
+    <main></main> -->
+
+<!-- EJEMPLO # 2 -->
+<a href="" class="uno">uno</a>
+<a href="" class="dos">dos</a>
+<a href="" class="tres">tres</a>
+
+
+    <p id="uno" class="oculto">UNO<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, recusandae a delectus quo autem dolorum. Omnis quos saepe eius aspernatur similique magnam nihil, inventore possimus nesciunt, nemo deserunt aperiam sequi numquam perferendis! Beatae officiis illum quae. Laudantium, necessitatibus aliquam aut mollitia consequatur tenetur tempore error labore esse rerum saepe officia.</p>
+    <p id="dos" class="oculto">DOS<br>Illum error saepe similique? Ducimus at dignissimos sit quidem voluptatum voluptas id magni beatae obcaecati eaque? Cum, corporis perferendis sapiente inventore ut ipsum, blanditiis consequuntur vel iusto accusantium distinctio doloribus dolore deserunt labore laborum excepturi a eum unde cupiditate ipsam voluptatem, veniam hic ratione totam! Explicabo sequi ipsum dicta. Optio?</p>
+    <p id="tres" class="oculto">TRES<br>Excepturi quasi ducimus assumenda ea, libero nisi aspernatur consequuntur, quidem, laborum cumque modi at odit obcaecati aperiam dolorum corporis vitae architecto sapiente beatae accusantium aliquam illum eos quibusdam facere. Iusto eveniet omnis excepturi, corrupti tempora incidunt sequi velit, nostrum fuga officiis nesciunt nam blanditiis doloribus explicabo ad culpa aliquid eum!</p> 
+
+    <script>
+        /* EJEMPLO # 2 */
+        var a = document.querySelectorAll('a')
+        a.forEach((link) => {
+            //console.log(link.classList[0])
+            var clase = link.classList[0] 
+            link.addEventListener('click', (e)=> {
+                e.preventDefault()
+                var p = document.querySelectorAll('p')
+                p.forEach(parr => {
+                    //console.log(parr.id)
+                    var id = parr.id
+                    if(clase == id){
+                        parr.classList.remove('oculto')
+                        parr.classList.add('activo')
+                    }else{
+                        parr.classList.remove('activo')
+                        parr.classList.add('oculto')
+                    }
+                })
+            })
+        })
+
+
+        //SPA -- Simple Page Aplication
+        /*  let main = document.querySelector('main')
+         let link1 = document.querySelector('#plantilla')
+         let linkUrl1 = link1.id + '.html'
+         //console.log(linkUrl1)
+         link1.addEventListener('click', (e) =>{
+             e.preventDefault()
+             let xhr = new XMLHttpRequest()
+             xhr.open('get', linkUrl1)
+             xhr.addEventListener('load', () =>{
+                 if(xhr.status == 200){
+                     let plantilla = xhr.response
+                     console.log(plantilla)
+                     main.innerHTML = plantilla
+                 }
+             })
+             xhr.send()
+         }) */
+
+
+        /* let main = document.querySelector('main')
+        let links = document.querySelectorAll('a')
+
+        links.forEach((link) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault()
+                var archivo = e.target.id + '.html'
+                console.log(archivo)
+                cargar(archivo)
+            })
+        })
+        function cargar(archivo) {
+            let xhr = new XMLHttpRequest()
+            xhr.open('get', archivo)
+            xhr.addEventListener('load', () => {
+                if (xhr.status == 200) {
+                    let plantilla = xhr.response
+                    console.log(plantilla)
+                    main.innerHTML = plantilla
+                    //agregar información al historial
+                    history.pushState(plantilla, ' ', archivo )
+                }
+            })
+            xhr.send()
+        }
+            addEventListener('popstate', (e) =>{
+            console.log(e.state)
+            main.innerHTML = e.state
+        }) */
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+
+        input{
+            padding: 10px 30px;
+        }
+        .p-nombre{
+            display: none;
+        }
+        .p-correo{
+            display: none;
+        }
+        .p-submit{
+            display: none;
+        }
+        .p-submit-error{
+            display: none;
+        }
+        .p-submit-enviado{
+            color: green;
+            display: block;
+        }
+         .p-submiterror{
+           display: block;
+           color: red;
+           font-size: 10px; 
+        } 
+    

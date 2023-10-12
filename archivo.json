@@ -1,0 +1,14 @@
+[
+{
+    "nombre":"Juan",
+    "apellido":"Gomez",
+    "edad":50,
+    "sueldo":250000
+},
+{
+    "nombre":"Marta",
+    "apellido":"Vega",
+    "edad":32,
+    "sueldo":280000
+}
+]

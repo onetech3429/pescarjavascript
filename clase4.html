@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 4 ---- JavaScript Avanzado</title>
+    <style></style>
+</head>
+
+<body>
+    <form action="progresar.php">
+        <input type="text" id="input1" placeholder="Escriba su nombre">
+        <input type="submit" value="nombre">
+    </form>
+    <script>
+        let form = document.querySelector("form")
+        let input = document.querySelector("#input1")
+        form.addEventListener("submit", (e) => {
+            e.preventDefault()
+            //console.log(e.target[0].value)
+            if(e.target[0].value == ''){
+                //console.log('Texto incompleto')
+            }
+            let valor = input.value
+            let long = valor.length
+            /* console.log(long)
+            console.log(encodeURIComponent(valor)) */
+            for (let i = 0; i < long; i++) {
+                let letra = valor[i]
+                let codigo = letra.charCodeAt()
+                if(codigo >= 91 && codigo <= 122){
+                  //  console.log('perfecto ingresaste letras')
+                }
+                if(letra == 'a'){
+                   // console.log('Encontraste una letra a en la posición ' +i)
+                }
+              /*  if (letra == 'a')
+                    console.log('encontré una a en la posición ' + i)  */               
+            } 
+        }) 
+        let x = 'A'
+       // console.log(x.charCodeAt())
+       let exp = /amor/ 
+       exp = /[Aa]mor/ // la palabra amor con la primera letra mayuscula o minusculas
+       exp = /[a-z,A-Z]/ // rango de letras mayusculas o minusculas
+       exp = /[0-9]/ // rango numerico
+       exp = /^[a-z0-9]{3,6}$/ //letras y numeros entre 3 y 6 caracteres
+       exp = /^.{4,10}$/ // cualquier caracter entre 4 y 10
+       exp = /\d{3}/ 
+       console.log(exp.test('1553'))
+
+    </script>
+</body>
+
+</html>

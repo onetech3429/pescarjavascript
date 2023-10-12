@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 12 --- javaScript Avanzado</title>
+    <style></style>
+</head>
+<body>
+
+    <script>
+        /* EJERCICIO # 3 (modular) */
+        const paciente = {
+            nombre: 'No declarado',
+            apellido: 'No declarado',
+            madre: 'No declarado',
+            padre: 'No declarado',
+
+            setNombre: (valor)=>{
+                paciente.nombre = valor
+            },
+            setApellido: (valor)=>{
+                paciente.apellido = valor
+            },
+            setMadre: (valor)=>{
+                paciente.madre = valor
+            },
+            setPadre: (valor)=>{
+                paciente.padre = valor
+            },
+            getNombre:() =>{
+                return paciente.nombre
+            },
+            getApellido:() =>{
+                return paciente.apellido
+            },
+            getMadre:() =>{
+                return paciente.madre
+            },
+            getPadre:() =>{
+                return paciente.padre
+            }
+        }
+
+        paciente.nombre = 'Juan'
+        paciente.apellido = 'Gomez'
+        paciente.madre = 'Marta'
+
+        console.log(`Paciente nombre:  ${paciente.getNombre()}, Apellido: ${paciente.getApellido()}, Madre: ${paciente.getMadre()}, Padre: ${paciente.getPadre()}`)
+
+
+        /* EJERCICIO # 2 (fachada) */
+        /* class Pelicula{
+            getAccion(){
+                return [
+                    {
+                        nombre: 'Duro de matar',
+                        duracion: '120min',
+                        actores: ['Bruce Willis','Juan Gomez']
+                    },
+                    {
+                        nombre: 'Misión imposible',
+                        duracion: '120min',
+                        actores: ['Tom Cruise', 'Marta Perez']
+                    }
+                ]
+            }
+            getTerror(){
+                return [
+                    {
+                        nombre: 'El exorcista',
+                        duracion: '240min',
+                        actores: ['Linda Blair', 'pedro rumbos']
+                    }
+                ]
+            }
+            getRomanticas(){}
+        }
+        const film = () => {
+            const x = new Pelicula()
+            const accion = x.getAccion()
+            const terror = x.getTerror()
+            const resultado = [...accion,...terror]
+            return resultado
+        }
+        console.log(film()) */
+
+        
+
+
+        /* EJERCICIO # 1 (SINGLETON) */
+       /*  const alumnos = {
+            listaAlumnos : [],
+            buscarUno: function(id){
+                return this.listaAlumnos[id]
+            },
+            agregar: function(datos){
+                this.listaAlumnos.push(datos)
+            },
+            mostrar: function(){
+                return this.listaAlumnos;
+            }
+        }
+        const a1 = {
+            nombre: 'Juan',
+            apellido: 'Gomez',
+            edad : 25
+        }
+        const a2 = {
+            nombre:'Marta',
+            apellido: 'Perez',
+            edad: 35
+        }
+        alumnos.agregar(a1)
+        alumnos.agregar(a2)
+        const x = alumnos.mostrar()
+        console.log(x)
+        console.log(alumnos.buscarUno(2)) */
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario --- Clase 4 --- javaStcript --- Avanzado</title>
+    <link rel="stylesheet" href="css/formulario.css">
+    
+</head>
+<body>
+    <form action="enviar.php" id="form" method="post">
+        <input type="text" name="nombre" id="nombre" placeholder="Usuario">
+        <p class="p-nombre" id="p-nombre">El usuario tiene que contener de 4 a 10 digitos y solo puede contener letras</p>
+        <input type="text" name="correo" id="correo" placeholder="Correo">
+        <p class="p-correo" id="p-correo">El correo debe contener el formato nombre@correo.com</p>
+        <input type="submit" value="Enviar Información">
+        <p class="p-submit" id="p-submit">correo enviado correctamente</p>
+        <p class="p-submit-error" id="p-submit-error">Correo no enviado</p>
+    </form>
+    <script src="js/formulario.js"></script>
+</body>
+</html>

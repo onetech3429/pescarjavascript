@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clase 10 --- OOP -- JavaScript Avanazado</title>
+    <style>
+        div{
+            border: 2px solid red;
+            width: 80%;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" id="form">
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="text" id="apellido" placeholder="Apellido">
+        <input type="text" id="edad" placeholder="Edad">
+        <input type="submit" id="enviar">
+    </form>
+    <div></div>
+
+    <script>
+        /*EJERCICIO # 4 (MODIFICADOR DE ACCESO)*/
+        /*manera 1 de crear un objeto*/
+        let obj1 = {
+            nombre: 'ana',
+            apellido: 'perez'
+        }
+        /*manera 2 de crear un objeto*/
+        const persona = new Object()
+        persona.nombre = 'Juan'
+        persona.apellido = 'Gomez'
+        /*manera 3 de crear un objeto*/
+        let obj3 = Object.create(null)
+        obj3.nombre = 'diego'
+        obj3.apellido = 'castro'
+
+        /*Manera 4 de crear un objeto*/
+        function Alumno(nombre, apellido){
+            this.nombre = nombre
+            this.apellido = apellido
+        }
+        let j = new Alumno('pepe', 'Lopez')
+        j.__proto__.color = 'rojo'
+        let A = new Alumno('Ana', 'Perez')
+
+        
+
+
+
+       /*  class Cliente{
+            #nombre
+            constructor(nombre){
+                this.#nombre = nombre
+            }
+            //getters y setters
+            set nombre(nombre){
+                this.#nombre = nombre
+            }
+            get nombre(){
+                return this.#nombre
+            }
+            //métodos
+            mostrar(){
+                return this.#nombre
+            }
+        }
+        let cliente = new Cliente('Anita') */
+
+        /* EJERCICIO # 3 (HERENCIA) */
+        /* class Padre {
+            constructor(nombre, edad){
+                this._nombre = nombre
+                this._edad = edad
+            }
+            informar(){
+                console.log(`Los datos son : nombre ${this._nombre} y edad ${this._edad}`)
+            }
+        }
+        class Hijo extends Padre{
+            constructor(nombre, edad, libro){
+                super(nombre,edad)
+                this._libro = libro
+            }
+            informar(){
+                super.informar()
+                console.log('soy el Hijooooo')
+            }
+        }
+        class Nieto extends Hijo{
+            constructor(nombre, edad, libro, juego){
+                super(nombre,edad, libro)
+                this._juego = juego
+            }
+        }
+
+        let padre = new Padre('Juan', 50)
+        let hijo = new Hijo('pedro', 15, 'El arte de la guerra')
+        let nieto = new Nieto('Fabian', 2, 'La tregua', 'Counter') */
+
+        /* EJERCICIO # 2 */
+       /*  let nombre = document.getElementById('nombre')
+        let apellido = document.getElementById('apellido')
+        let edad = document.getElementById('edad')
+        let form = document.getElementById('form')
+
+        class Persona {
+            constructor(n, a, ed){
+                this.nombre = n
+                this.apellido = a
+                this.edad = ed
+            }
+            saludar(){
+                console.log(`Hola ${this.nombre} ${this.apellido}`)
+            }
+        }
+        form.addEventListener('submit', (e) => {
+            e.preventDefault()
+            /* console.log('Acá estoy')
+            let obp1 = new Persona(nombre, apellido, edad)
+            obp1.saludar() 
+            //console.log(nombre.value)
+            nombre = nombre.value
+            apellido = apellido.value
+            edad = edad.value
+            let obp1 = new Persona(nombre, apellido, edad)
+            obp1.saludar()
+        })
+         */
+
+
+
+        /* EJERCICIO # 1 */
+       /* let persona = {
+        nombre: 'juan',
+        apellido: 'gomez',
+        edad: 30,
+        datos: function(){
+            return `<p>Hola ${this.nombre} </p>`
+        }
+       }  */
+       
+       //contructor
+       /* class Auto{
+        //atributos
+        marca
+        rueda
+        constructor(m, r){
+            this.marca = m
+            this.rueda = r
+        }        
+        //metodo
+        acelerar(){
+            return `${this.marca} Tiene una aceleración por ${this.rueda} ruedas`
+        }
+       }
+       let x = new Auto('ford', 4)
+       let y = new Auto('fiat', 3) */
+    </script>
+</body>
+</html>

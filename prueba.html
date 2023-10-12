@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>        
+        <input id="nombre" type="text"  placeholder="escribi tu nombre" 
+               oninput="checknombre();"    
+               required/>
+        <button type="submit">Nombre</button>
+    </form>
+   
+    <script>
+        function checknombre() {
+	let input = document.querySelector("#nombre");
+	if (input.value.length < 3) {
+		input.setCustomValidity("el nombre es muy corto");
+	} else {
+		input.setCustomValidity(""); 		
+	}
+} 
+    </script>
+</body>
+</html>

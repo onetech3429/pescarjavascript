@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 5 --- JavaScript Avanzado</title>
+    <style></style>
+</head>
+
+<body>
+   <!--  <p id="conten"></p> -->
+    <button>Mostrar contenido</button>
+    <script>
+        //XHR (XWLHttpRequest)
+        /* setTimeout(() => {
+            console.log('Código asíncrono')
+        }, 4000)
+        console.log('código síncrono') */
+        //AJAX  (XHR)
+        //paso 1: crear el objeto
+        //paso 2: abrir el archivo
+        //paso 3: cargar
+        //paso 4: ejecutar
+        //paso opcional :
+        //paso 5: verificar status
+        //paso 6: mostrar resultados
+
+        /* var conten = document.querySelector('#conten')
+        conten.innerText = 'Cargando....' */
+        //mirar este comportamiento
+        /*  var ajax = new XMLHttpRequest()
+         setTimeout(() => {  
+             //var ajax = new XMLHttpRequest()                     
+             ajax.open('get', 'archivo.txt')
+             ajax.onload = cargarDatos
+             ajax.send()
+         }, 4000)
+         function cargarDatos(){           
+             if(ajax.status == 200){
+             console.log(ajax.responseText)
+             conten.innerText = ajax.responseText
+             } else{
+                 conten.innerText = 'Contenido no está disponible'                
+             }
+         } */
+
+       /*  var ajax = new XMLHttpRequest()
+        ajax.open('get', 'archivo.json')
+        ajax.onload = () => {
+            if(ajax.status == 200) {
+                console.log('Antes')
+                console.log(ajax.responseText)
+                var personas = JSON.parse(ajax.responseText)
+                console.log('Después')
+                console.log(personas)
+                for(var i = 0 ; i < personas.length; i++){
+                    let lista = document.createElement('ul')
+                    let item = '<li>Nombre: '    + personas[i].nombre   + '</li>' +
+                               '<li>Apellido : ' + personas[i].apellido + '</li>' +
+                               '<li>Edad: '      + personas[i].edad     + '</li>' +
+                               '<li>Sueldo: '    + personas[i].sueldo   + '</li>'
+                    lista.innerHTML = item
+                    document.body.appendChild(lista)
+                }
+            }
+        } 
+        ajax.send() */
+
+        let btn = document.querySelector('button')
+        btn.addEventListener('click', () =>{
+            let xhr = new XMLHttpRequest()
+            xhr.open('get','plantilla.html')
+            xhr.addEventListener('load', () =>{
+                if(xhr.status == 200){
+                    let plantilla = xhr.response
+                    console.log(plantilla)
+                    let div = document.createElement('div')
+                    div.innerHTML = plantilla
+                    document.body.appendChild(div) 
+                    
+                    
+                }
+            })
+            xhr.send()
+        }) 
+
+        //SPA
+
+        
+
+    </script>
+</body>
+
+</html>
